@@ -1,27 +1,42 @@
+// src/App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+
+// Shared Components
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+
+// Pages
+import Home from './pages/home.jsx';
+import About from './pages/about.jsx';
+import Contact from './pages/contact.jsx';
+import Projects from './pages/projects.jsx';
+import Services from './pages/services.jsx';
+
+// Admin Pages
+import Login from './pages/admin/login.jsx';
+import Dashboard from './pages/admin/dashboard.jsx';
 
 export default function App() {
   return (
-    <Router basename="/ardi-bau">
+    <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
+
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/services" element={<Services />} />
+
+            {/* Admin */}
+            <Route path="/admin/login" element={<Login />} />
+            <Route path="/admin/dashboard" element={<Dashboard />} />
           </Routes>
         </main>
+
         <Footer />
       </div>
     </Router>
