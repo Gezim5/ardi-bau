@@ -2,9 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/', // If your repo was a subfolder, you’d write '/repo-name/'
+  base: './', // Critical for relative file loading on GitHub Pages with custom domain
   plugins: [react()],
   build: {
-    outDir: 'docs', // Important for GitHub Pages when using /docs folder
+    outDir: 'docs',
   },
 });
