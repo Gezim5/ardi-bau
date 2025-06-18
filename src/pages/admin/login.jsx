@@ -1,33 +1,12 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
 
-const Login = () => {
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-
-  const handleLogin = () => {
-    if (password === 'admin123') {
-      localStorage.setItem('admin-auth', 'true');
-      navigate('/admin/dashboard');
-    } else {
-      alert('Falsches Passwort');
-    }
-  };
-
+export default function Login() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <input
-        type="password"
-        placeholder="Admin Passwort"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="border p-2 rounded"
-      />
-      <button onClick={handleLogin} className="mt-4 bg-black text-white px-4 py-2 rounded">
-        Login
-      </button>
-    </div>
+    <section className="space-y-4 max-w-md mx-auto">
+      <h1 className="text-2xl font-bold">Admin Login</h1>
+      <input className="w-full border p-2" placeholder="Username" />
+      <input type="password" className="w-full border p-2" placeholder="Password" />
+      <button className="bg-blue-600 text-white px-4 py-2 rounded">Login</button>
+    </section>
   );
-};
-
-export default Login;
+}

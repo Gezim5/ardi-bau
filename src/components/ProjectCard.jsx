@@ -1,18 +1,13 @@
-// src/components/ProjectCard.jsx
-import React from 'react';
+import React from "react";
 
-const ProjectCard = ({ title, description, media }) => (
-  <div className="bg-white shadow-lg rounded p-4">
-    {media.endsWith('.mp4') ? (
-      <video controls className="w-full h-64 object-cover rounded">
-        <source src={media} type="video/mp4" />
-      </video>
-    ) : (
-      <img src={media} alt={title} className="w-full h-64 object-cover rounded" />
-    )}
-    <h3 className="text-xl font-bold mt-4">{title}</h3>
-    <p className="text-gray-600">{description}</p>
-  </div>
-);
-
-export default ProjectCard;
+export default function ProjectCard({ title, image, description }) {
+  return (
+    <div className="border rounded-lg overflow-hidden shadow hover:shadow-lg transition">
+      <img src={image} alt={title} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h3 className="font-semibold text-lg">{title}</h3>
+        <p className="text-gray-600">{description}</p>
+      </div>
+    </div>
+  );
+}

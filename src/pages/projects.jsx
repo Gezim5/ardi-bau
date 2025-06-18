@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import ProjectCard from '../components/ProjectCard';
+import React from "react";
+import ProjectCard from "../components/ProjectCard.jsx";
 
-const Projects = () => {
-  const [projects, setProjects] = useState([]);
+const exampleProjects = [
+  { title: "Projekt 1", image: "/project1.jpg", description: "Beschreibung 1" },
+  { title: "Projekt 2", image: "/project2.jpg", description: "Beschreibung 2" },
+  { title: "Projekt 3", image: "/project3.jpg", description: "Beschreibung 3" },
+];
 
-  useEffect(() => {
-    const stored = localStorage.getItem('projects');
-    if (stored) setProjects(JSON.parse(stored));
-  }, []);
-
+export default function Projects() {
   return (
-    <div className="p-8 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6">Unsere Projekte</h1>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, idx) => (
-          <ProjectCard key={idx} {...project} />
+    <section className="space-y-6">
+      <h1 className="text-3xl font-bold">Unsere Projekte</h1>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {exampleProjects.map((p, idx) => (
+          <ProjectCard key={idx} {...p} />
         ))}
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Projects;
+}

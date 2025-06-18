@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
 
 export default function Services() {
   return (
-    <section className="p-8">
-      <h2 className="text-3xl font-bold mb-6">Unsere Leistungen</h2>
-      <ul className="space-y-4">
-        <li><strong>Neubau:</strong> Planung und Umsetzung moderner Wohn- und Geschäftsgebäude.</li>
-        <li><strong>Sanierung:</strong> Komplette Sanierungsarbeiten für Altbauten.</li>
-        <li><strong>Innenausbau:</strong> Hochwertige Innenausbauten inklusive Trockenbau und Böden.</li>
-        <li><strong>Fassadenarbeiten:</strong> Wärmedämmung, Putz und Gestaltung.</li>
+    <section className="space-y-4">
+      <h1 className="text-3xl font-bold">Unsere Leistungen</h1>
+      <ul className="list-disc space-y-2 pl-5">
+        <li>Neubau</li>
+        <li>Renovierung</li>
+        <li>Innenausbau</li>
       </ul>
     </section>
   );
